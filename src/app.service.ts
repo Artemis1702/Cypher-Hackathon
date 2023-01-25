@@ -22,7 +22,6 @@ export class AppService {
   async getMasterCoinList() {
     try {
       const response = await axios.get('https://api.coingecko.com/api/v3/coins/list');
-      const coins = response.data;
       this.masterCoinList = response.data.map((coin: { id: any; symbol: any; name: any; }) => {
         return { id: coin.id, symbol: coin.symbol, name: coin.name };
       });
