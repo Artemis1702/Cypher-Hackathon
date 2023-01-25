@@ -30,10 +30,15 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "axios": "^1.2.4",
+    "covalent-api": "^1.0.6",
+    "covalent-sdk": "^1.0.2",
     "db-local": "^2.9.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
     "uuidv4": "^6.2.13",
+    "web3": "^1.8.1",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
