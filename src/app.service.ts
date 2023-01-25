@@ -15,4 +15,20 @@ export class AppService {
     const response = await axios.get(`https://api.covalenthq.com/v1/1/address/${address}/balances_v2/?key=${apiKey}`);
     return response.data;
   }
+
+  async getMasterCoinList() {
+    try {
+      const response = await axios.get('https://api.coingecko.com/api/v3/coins/list');
+      const coins = response.data;
+      const filteredCoins = coins.map((coin: { id: any; symbol: any; name: any; }) => ({
+        id: coin.id,
+        symbol: coin.symbol,
+        name: coin.name
+      }));
+      return filteredCoins;
+    } catch (error) {
+      throw new Error("Error");
+    }
+  }
+  
 }

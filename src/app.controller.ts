@@ -23,4 +23,10 @@ export class AppController {
       throw new HttpException("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  @Get('coin')
+  async getMasterCoinList() {
+    return await this.appService.getMasterCoinList();
+  }
+
 }
