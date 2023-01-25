@@ -1,4 +1,4 @@
-import { Controller, Get, HttpException, HttpStatus, Param } from '@nestjs/common';
+import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -29,4 +29,15 @@ export class AppController {
     return await this.appService.getMasterCoinList();
   }
 
+  @Post('create')
+  async createWatchlist(@Body() name: string) {
+    return this.appService.createWatchlist(name);
+  }
+
+  @Put(':name/tokens')
+  async addTokensToWatchlist(@Param('name') name: string, @Body() tokens: string[]) {
+    return this.appService.addTokensToWatchlist(name, tokens);
+  }
+
 }
+
