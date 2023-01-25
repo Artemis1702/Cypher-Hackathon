@@ -51,5 +51,17 @@ export class AppService {
     this.db.update(name,tokens);
     return watchlist;
   }
+
+  getWatchlist(id: string){
+    const watchlist = this.db.findid(id);
+    if(!watchlist) {
+      throw new Error(`Watchlist ${id} not found`);
+    }
+    return watchlist;
+  }
+
+  // for deleting a token just update it without that token
+
+  // for removing a user by id find id and then remove
   
 }

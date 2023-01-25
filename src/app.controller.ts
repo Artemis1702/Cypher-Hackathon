@@ -39,5 +39,10 @@ export class AppController {
     return this.appService.addTokensToWatchlist(name, tokens);
   }
 
+  @Get('/:id')
+  getWatchlist(@Param('id') id: string) {
+    return this.appService.getWatchlist(id);
+  }
+
 }
 
